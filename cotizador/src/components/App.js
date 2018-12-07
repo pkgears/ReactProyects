@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from  './header/header'
 import Formulario from "./formulario/formulario";
 import Resumen from "./resumen/resumen";
+import Resultado from './resultado/resultado';
 
 import { obtenerDiferenciaAnio, calcularMarca, obtenerPlan } from '../helpers/helper'
 
@@ -59,6 +60,9 @@ class App extends Component {
           <Resumen
             datos = {this.state.datos}
             resultado = {this.state.resultado}
+          />
+          <Resultado 
+              resultado = {this.state.resultado}
           />
         </div>
       </div>
