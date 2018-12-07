@@ -21,3 +21,26 @@ cotizador/.env.production.local
 cotizador/npm-debug.log*
 cotizador/yarn-debug.log*
 cotizador/yarn-error.log*
+
+
+################# PETS
+pets/node_modules
+pets/.pnp
+pets/.pnp.js
+
+# testing
+pets/coverage
+
+# production
+pets/build
+
+# misc
+pets/.DS_Store
+pets/.env.local
+pets/.env.development.local
+pets/.env.test.local
+pets/.env.production.local
+
+pets/npm-debug.log*
+pets/yarn-debug.log*
+pets/yarn-error.log*
