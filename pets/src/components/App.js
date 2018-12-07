@@ -15,6 +15,19 @@ class App extends Component {
     console.log(citas);
   }
 
+  borrarCita = (id) => {
+    console.log(id);
+
+    const citasActuales = [...this.state.citas]
+
+    const citas = citasActuales.filter(cita => cita.id != id );
+
+    this.setState({
+      citas
+    });
+
+  }
+
   render() {
     return (
       <div className="container">
@@ -29,6 +42,7 @@ class App extends Component {
           <div className="col-md-6">
             <ListaCitas 
               citas={this.state.citas}
+              borrarCita = {this.borrarCita}
               />
           </div>
         </div>

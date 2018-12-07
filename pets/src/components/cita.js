@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 
 class Cita extends Component {
+
+    eliminarCita = (id) => {
+        this.props.borrarCita(this.props.info.id);
+    }
     
     render(){ 
         const {fecha, hora, mascota, propietario, id, sintomas} = this.props.info
@@ -14,6 +18,8 @@ class Cita extends Component {
                     <p className="card-text"><b>Hora de ingreso:</b> {hora}</p>
                     <p className="card-text"><b>Sintomas:</b></p>
                     <p className="card-text">{sintomas}</p>
+
+                    <button className="btn btn-danger" onClick={this.eliminarCita}>Borrar cita</button>
                 </div>
             </div>
         );
