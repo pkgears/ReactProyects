@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+#  .gitignore Cotizador
+# dependencies
+cotizador/node_modules
+cotizador/.pnp
+cotizador/.pnp.js
+
+# testing
+cotizador/coverage
+
+# production
+cotizador/build
+
+# misc
+cotizador/.DS_Store
+cotizador/.env.local
+cotizador/.env.development.local
+cotizador/.env.test.local
+cotizador/.env.production.local
+
+cotizador/npm-debug.log*
+cotizador/yarn-debug.log*
+cotizador/yarn-error.log*
