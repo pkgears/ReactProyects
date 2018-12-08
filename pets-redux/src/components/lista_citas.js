@@ -25,8 +25,7 @@ class ListaCitas extends Component {
                         {Object.keys(this.props.citas).map(cita => (
                             <Cita 
                                 key={cita}
-                                info={this.props.citas[cita]}
-                                borrarCita={this.props.borrarCita}/>
+                                info={this.props.citas[cita]}/>
                         ))}
                     </div>
                 </div>
@@ -36,8 +35,7 @@ class ListaCitas extends Component {
 }
 
 ListaCitas.propTypes = {
-    citas: PropTypes.array.isRequired,
-    borrarCita: PropTypes.func.isRequired
+    citas: PropTypes.array.isRequired
 }
 
 const mapStateToProps = (state) => ({

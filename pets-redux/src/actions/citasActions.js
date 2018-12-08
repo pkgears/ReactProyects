@@ -13,3 +13,11 @@ export const agregarCita = (cita) => {
         payload: cita
     }
 }
+
+export const borrarCita = (id) =>{
+    console.log('Borrando cita', id);
+    return {
+        type: BORRAR_CITA,
+        payload: id
+    }
+}

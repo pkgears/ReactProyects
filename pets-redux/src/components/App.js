@@ -30,25 +30,6 @@ class App extends Component {
     localStorage.setItem("citas", JSON.stringify(this.state.citas));
   }
 
-  crearCita = (nuevaCita) => {
-    const citas = [...this.state.citas, nuevaCita];
-    this.setState({citas})
-    console.log(citas);
-  }
-
-  borrarCita = (id) => {
-    console.log(id);
-
-    const citasActuales = [...this.state.citas]
-
-    const citas = citasActuales.filter(cita => cita.id !== id );
-
-    this.setState({
-      citas
-    });
-
-  }
-
   render() {
     return (
       <Provider store={store} >
@@ -60,9 +41,7 @@ class App extends Component {
             </div>
 
             <div className="col-md-6">
-              <ListaCitas 
-                borrarCita = {this.borrarCita}
-                />
+              <ListaCitas/>
             </div>
           </div>
         </div>
