@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import uuid from 'uuid'
 
 class AgregarCita extends Component {
@@ -104,6 +105,10 @@ class AgregarCita extends Component {
             </div>
         );
     }
+}
+
+AgregarCita.propTypes = {
+    crearCita: PropTypes.func.isRequired
 }
 
 export default AgregarCita
