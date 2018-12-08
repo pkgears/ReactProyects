@@ -44,3 +44,48 @@ pets/.env.production.local
 pets/npm-debug.log*
 pets/yarn-debug.log*
 pets/yarn-error.log*
+
+
+################# PETS redux
+pets-redux/node_modules
+pets-redux/.pnp
+pets-redux/.pnp.js
+
+# testing
+pets-redux/coverage
+
+# production
+pets-redux/build
+
+# misc
+pets-redux/.DS_Store
+pets-redux/.env.local
+pets-redux/.env.development.local
+pets-redux/.env.test.local
+pets-redux/.env.production.local
+
+pets-redux/npm-debug.log*
+pets-redux/yarn-debug.log*
+pets-redux/yarn-error.log*
+
+################# crud redux
+redux-crud/node_modules
+redux-crud/.pnp
+redux-crud/.pnp.js
+
+# testing
+redux-crud/coverage
+
+# production
+redux-crud/build
+
+# misc
+redux-crud/.DS_Store
+redux-crud/.env.local
+redux-crud/.env.development.local
+redux-crud/.env.test.local
+redux-crud/.env.production.local
+
+redux-crud/npm-debug.log*
+redux-crud/yarn-debug.log*
+redux-crud/yarn-error.log*
