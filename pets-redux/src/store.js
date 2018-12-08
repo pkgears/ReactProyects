@@ -7,9 +7,13 @@ const initialState = {};
 
 const middelware = [thunk];
 
+// Agregar localStorage
+const storageState = localStorage.getItem('citas') ? 
+                        JSON.parse(localStorage.getItem('citas')) : [];
+
 const store = createStore(
                 rootReducer, 
-                initialState, 
+                storageState, 
                 compose(applyMiddleware(...middelware),
                     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
                 ));

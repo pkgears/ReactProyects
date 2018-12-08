@@ -10,26 +10,6 @@ import store from '../store';
 
 class App extends Component {
 
-  state = {
-    citas:[]
-  };
-
-
-  componentDidMount(){
-    console.log('Listo');
-    const citasLocalStorage = localStorage.getItem('citas');
-    if( citasLocalStorage){
-      this.setState({
-        citas: JSON.parse(citasLocalStorage)
-      })
-    }
-  }
-
-  componentDidUpdate(){
-    console.log('Algo cambio');
-    localStorage.setItem("citas", JSON.stringify(this.state.citas));
-  }
-
   render() {
     return (
       <Provider store={store} >

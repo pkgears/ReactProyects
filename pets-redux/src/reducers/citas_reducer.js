@@ -5,14 +5,14 @@ import { MOSTAR_CITAS, BORRAR_CITA, AGREGAR_CITA} from '../actions/types';
 
 const initialState = {
     citas: [
-        {
-            id: 0,
-            fecha: '10-10-2010',
-            hora:'10:30',
-            mascota: 'Brook',
-            propietario: 'Yo',
-            sintomas: 'Está bien pendejo'
-        }
+        // {
+        //     id: 0,
+        //     fecha: '10-10-2010',
+        //     hora:'10:30',
+        //     mascota: 'Brook',
+        //     propietario: 'Yo',
+        //     sintomas: 'Está bien pendejo'
+        // }
     ]
 }
 

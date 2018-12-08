@@ -5,6 +5,12 @@ import PropTypes from 'prop-types';
 // Redux
 import { connect } from 'react-redux';
 import { getCitas } from '../actions/citasActions'
+import  store from '../store' 
+
+store.subscribe(() => {
+    // console.log(store.getState());
+    localStorage.setItem('citas', JSON.stringify(store.getState()))
+})
 
 class ListaCitas extends Component {
 

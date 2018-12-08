@@ -5,6 +5,7 @@ import uuid from 'uuid'
 // redux
 import { connect } from 'react-redux';
 import { agregarCita } from '../actions/citasActions';
+import { mostarError } from '../actions/errors.actions'
 
 class AgregarCita extends Component {
     // Refs
@@ -12,11 +13,11 @@ class AgregarCita extends Component {
     propietarioRef = React.createRef();
     fechaRef = React.createRef();
     horaRef = React.createRef();
-    sintomasRef = React.createRef();1
+    sintomasRef = React.createRef();
 
-    state = {
-        error: false
-    };
+    componentDidMount(){
+        this.props.mostarError(false);
+    }
 
     crearCita = (e) => {
         e.preventDefault();
@@ -28,8 +29,8 @@ class AgregarCita extends Component {
                 sintomas = this.sintomasRef.current.value;
 
         if (!mascota || !propietario || !fecha || !hora || !sintomas) {
-            console.log('Faltan campos');
-            this.setState({error:true});
+            // console.log('Faltan campos');
+            this.props.mostarError(true);
         }else{
             const nuevaCita = {
                 id: uuid(),
@@ -45,14 +46,14 @@ class AgregarCita extends Component {
     
             // reset form
             e.currentTarget.reset()
-            this.setState({error:false});
+            this.props.mostarError(false);
         }
         
 
     }
     
     render(){
-        const error = this.state.error
+        const error = this.props.error
 
         return(
             <div className="card mt-5">
@@ -117,7 +118,8 @@ AgregarCita.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-    citas: state.citas.citas
+    citas: state.citas.citas,
+    error: state.error.error
 })
 
-export default connect(mapStateToProps, {agregarCita}) (AgregarCita)
+export default connect(mapStateToProps, {agregarCita, mostarError}) (AgregarCita)
