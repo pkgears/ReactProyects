@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid'
 
+// redux
+import { connect } from 'react-redux';
+import { agregarCita } from '../actions/citasActions';
+
 class AgregarCita extends Component {
     // Refs
     nombreMascotaRef = React.createRef();
@@ -14,7 +18,7 @@ class AgregarCita extends Component {
         error: false
     };
 
-    crearNuevaCita = (e) => {
+    crearCita = (e) => {
         e.preventDefault();
 
         const   mascota = this.nombreMascotaRef.current.value,
@@ -35,8 +39,9 @@ class AgregarCita extends Component {
                 hora,
                 sintomas
             }
-            // Se envia obj a padre
-            this.props.crearCita(nuevaCita);
+            
+            // Se envia al state
+            this.props.agregarCita(nuevaCita);
     
             // reset form
             e.currentTarget.reset()
@@ -53,7 +58,7 @@ class AgregarCita extends Component {
             <div className="card mt-5">
                 <div className="card-body">
                     <h2 className="card-title text-center mb-5">Agregar citas</h2>
-                    <form onSubmit={this.crearNuevaCita}>
+                    <form onSubmit={this.crearCita}>
                     <div className="form-group row">
                         <label className="col-sm-4 col-lg-2 col-form-label">Nombre Mascota</label>
                         <div className="col-sm-8 col-lg-10">
@@ -108,7 +113,11 @@ class AgregarCita extends Component {
 }
 
 AgregarCita.propTypes = {
-    crearCita: PropTypes.func.isRequired
+    agregarCita: PropTypes.func.isRequired
 }
 
-export default AgregarCita
+const mapStateToProps = (state) => ({
+    citas: state.citas.citas
+})
+
+export default connect(mapStateToProps, {agregarCita}) (AgregarCita)

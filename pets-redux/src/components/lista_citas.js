@@ -2,7 +2,16 @@ import React, {Component} from 'react';
 import Cita  from "./cita";
 import PropTypes from 'prop-types';
 
+// Redux
+import { connect } from 'react-redux';
+import { getCitas } from '../actions/citasActions'
+
 class ListaCitas extends Component {
+
+    componentDidMount(){ 
+        this.props.getCitas();
+    }
+
     render(){ 
         const citas = this.props.citas
         let mensaje 
@@ -31,4 +40,8 @@ ListaCitas.propTypes = {
     borrarCita: PropTypes.func.isRequired
 }
 
-export default ListaCitas
+const mapStateToProps = (state) => ({
+    citas: state.citas.citas
+})
+
+export default connect(mapStateToProps, {getCitas}) (ListaCitas);
