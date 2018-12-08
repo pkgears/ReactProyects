@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 
 class Cita extends Component {
 
-    eliminarCita = (id) => {
+    eliminarCita = () => {
         this.props.borrarCita(this.props.info.id);
     }
     
     render(){ 
-        const {fecha, hora, mascota, propietario, id, sintomas} = this.props.info
+        const {fecha, hora, mascota, propietario, sintomas} = this.props.info
 
         return(
             <div className="media mt-3">

@@ -9,6 +9,22 @@ class App extends Component {
     citas:[]
   };
 
+
+  componentDidMount(){
+    console.log('Listo');
+    const citasLocalStorage = localStorage.getItem('citas');
+    if( citasLocalStorage){
+      this.setState({
+        citas: JSON.parse(citasLocalStorage)
+      })
+    }
+  }
+
+  componentDidUpdate(){
+    console.log('Algo cambio');
+    localStorage.setItem("citas", JSON.stringify(this.state.citas));
+  }
+
   crearCita = (nuevaCita) => {
     const citas = [...this.state.citas, nuevaCita];
     this.setState({citas})
@@ -20,7 +36,7 @@ class App extends Component {
 
     const citasActuales = [...this.state.citas]
 
-    const citas = citasActuales.filter(cita => cita.id != id );
+    const citas = citasActuales.filter(cita => cita.id !== id );
 
     this.setState({
       citas
